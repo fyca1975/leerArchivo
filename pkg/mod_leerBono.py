@@ -20,13 +20,20 @@ def leerBono( archivoLeeBono, fecha ):
     print ('TRN_DATE-->', datosBono['TRN_DATE'].dtypes)
     # Quitamos los registros 
     # (df3[(df3.county=='Manhattan') & (df.party=='Democrat')])
-    datosBono = datosBono[(datosBono['TRN_DATE']<= fecha) | 
-                          (datosBono['SETTLEMENT_DATE']<= fecha)]
-    print(datosBono)      
-    # Quitar los espacios para poder realizar la comparacion .split
+    datosBono = datosBono[(datosBono['TRN_DATE']<= fecha)]
     datosBono['M_TP_PFOLIO'] = datosBono['M_TP_PFOLIO'].str.split(expand=True)
     datosBono = datosBono[datosBono.M_TP_PFOLIO.isin(
         ('FI1','FI2','FI3','FI4','FI6','FI7_SUBAST',''))]
+    
+    # df.dropna(subset=['name', 'toy']) 
+    # los stldate vacios no van  
+    datosBono = datosBono.dropna(subset=['SETTLEMENT_DATE'])
+
+
+    # |                          (datosBono['SETTLEMENT_DATE']<= fecha)]
+    # print(datosBono)      
+    # Quitar los espacios para poder realizar la comparacion .split
+
     # print(datosBono['SETTLEMENT_DATE'])
     # print(datosBono.head())
   
