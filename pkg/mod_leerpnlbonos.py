@@ -10,7 +10,7 @@ import pandas as pd
 
 def leerPnlBonos (archivoLeePNL: str, archivoLeeBono: str ):
     # Leer archivos planos y trabajarlos en dataframe
-    datosPNL = pd.read_csv(archivoLeePNL, sep=";", header = 0)
+    # datosPNL = pd.read_csv(archivoLeePNL, sep=";", header = 0)
     datosBono = pd.read_csv(archivoLeeBono, sep=";", header = 0)  
     #Tomar solo las columnas a trabajar 
     datosPNL =  datosPNL [['ContractNB','P&L (Abs)', 'PV effect']]

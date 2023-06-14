@@ -10,4 +10,4 @@ import pandas as pd
 
 def leerPNL(archivoLeePNL, archivoLeeBono ):
     datosPNL = pd.read_csv(archivoLeePNL, sep=";", header = 0 )
-    datosPNL = pd.read_csv(archivoLeePNL, sep=";", header = 0 )
+    # datosPNL = pd.read_csv(archivoLeePNL, sep=";", header = 0 )
