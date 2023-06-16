@@ -7,6 +7,7 @@ Created on Thu May  4 06:24:23 2023
 """
 import pandas as pd
 #import numpy as np
+from pkg.mod_generaArchivo import generar_csv
 
 def leerBono( archivoLeeBono, fecha ):
     # Crea dataset con pandas para trabajar los datos del archivo
@@ -41,6 +42,9 @@ def leerBono( archivoLeeBono, fecha ):
     # genera solo los mayores 
     datosBono = datosBono.loc[(datosBono['SETTLEMENT_DATE'] > datosBono['TRN_DATE'])]  
     print('Mayor fecha ->', datosBono.shape[0])
+
+    # pasamos los datos al pkg que genera el archivo 
+    generar_csv(datosBono, 'prueba.csv')
 
 
 
