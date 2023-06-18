@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Apr 18 12:40:34 2023
-
-@author: fredy
+@author: Fredy Yecid Castro Agray 
 """
 import os
 from datetime import datetime
@@ -20,8 +18,8 @@ def run():
     archivoLeeBono = 'batch_Bonos_'+ fechaArchivo + '.txt'
     ##leerPnlBonos(archivoLeePNL,archivoLeeBono )
     # convierte el str a formato de fecha
-    date_object = datetime.strptime(fechaArchivo, '%d%m%Y')
-    leerBono(archivoLeeBono, date_object )
+    #date_object = datetime.strptime(fechaArchivo, '%d%m%Y')
+    leerBono(archivoLeeBono, fechaArchivo )
 
 
 if __name__ == '__main__':
